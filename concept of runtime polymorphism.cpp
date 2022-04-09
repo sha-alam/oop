@@ -1,26 +1,24 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-class A
+
+class base
 {
 public:
-    void display()
-    {
-        cout<<"A"<<endl;
-    }
+    virtual void print ()
+    { cout<< "print base class" <<endl; }
 };
-class B:public A
+
+class derived:public base
 {
 public:
-    void display()
-    {
-        cout<<"B"<<endl;
-    }
+    void print ()
+    { cout<< "print derived class" <<endl; }
 };
 int main()
 {
-    B a;
-    a.display();
+    base *p;
+    derived d;
+    p = &d;
+    p->print();
     return 0;
 }
-
-
